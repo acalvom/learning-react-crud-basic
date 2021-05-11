@@ -1,12 +1,13 @@
 import React, {useState} from "react";
+import { v4 as uuidv4 } from 'uuid';
 import UserTable from "./components/UserTable";
 
 function App() {
 
     const usersData = [
-        {id: 1, name: 'Paula', age: 22, avatar: 'https://via.placeholder.com/48'},
-        {id: 2, name: 'Jose', age: 35, avatar: 'https://via.placeholder.com/48'},
-        {id: 3, name: 'Andrea', age: 25, avatar: 'https://via.placeholder.com/48'}
+        {id: uuidv4(), name: 'Paula', age: 22, avatar: 'https://via.placeholder.com/48'},
+        {id: uuidv4(), name: 'Jose', age: 35, avatar: 'https://via.placeholder.com/48'},
+        {id: uuidv4(), name: 'Andrea', age: 25, avatar: 'https://via.placeholder.com/48'}
     ]
 
     // Como queremos que la tabla tenga valores ya por defecto, necesito añadirlo al estado inicial

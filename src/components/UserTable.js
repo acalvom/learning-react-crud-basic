@@ -14,19 +14,23 @@ const UserTable = ({users}) => {
             </thead>
             <tbody>
             {
-                users.map((user, index) =>
-                    <tr key={index}>
-                        <td>
-                            <img src={user.avatar} alt="Avatar"/>
-                        </td>
-                        <td> {user.name}</td>
-                        <td> {user.age}</td>
-                        <td>
-                            <button className="button muted-button">Edit</button>
-                            <button className="button muted-button">Delete</button>
-                        </td>
+                users.length > 0 ?
+                    users.map((user) =>
+                        <tr key={user.id}>
+                            <td>
+                                <img src={user.avatar} alt="Avatar"/>
+                            </td>
+                            <td> {user.name}</td>
+                            <td> {user.age}</td>
+                            <td>
+                                <button className="button muted-button">Edit</button>
+                                <button className="button muted-button">Delete</button>
+                            </td>
+                        </tr>
+                    ) :
+                    <tr>
+                        <td colSpan={3}> No users</td>
                     </tr>
-                )
             }
             </tbody>
         </table>
