@@ -1,24 +1,33 @@
 import React from 'react';
 
-const UserTable = () => {
+const UserTable = ({users}) => {
+    console.log(users)
     return (
         <table>
             <thead>
             <tr>
+                <th>Avatar</th>
                 <th>Name</th>
-                <th>Username</th>
+                <th>Age</th>
                 <th>Actions</th>
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>Name data</td>
-                <td>Username data</td>
-                <td>
-                    <button className="button muted-button">Edit</button>
-                    <button className="button muted-button">Delete</button>
-                </td>
-            </tr>
+            {
+                users.map((user, index) =>
+                    <tr key={index}>
+                        <td>
+                            <img src={user.avatar} alt="Avatar"/>
+                        </td>
+                        <td> {user.name}</td>
+                        <td> {user.age}</td>
+                        <td>
+                            <button className="button muted-button">Edit</button>
+                            <button className="button muted-button">Delete</button>
+                        </td>
+                    </tr>
+                )
+            }
             </tbody>
         </table>
     );
