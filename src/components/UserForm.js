@@ -34,7 +34,7 @@ const UserForm = (props) => {
                         {errors.age && errors.age.type === "max" && <span>WTF???</span>}
                     </div>
                     <div className="col-md-3">
-                        <button type="submit" className="btn btn-primary">Añadir</button>
+                        <button type="submit" className="btn btn-primary">Add</button>
                     </div>
                 </div>
             </form>
