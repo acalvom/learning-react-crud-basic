@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react'
 import {useForm} from 'react-hook-form'
 
-const UserForm = (props) => {
+const AddUserForm = (props) => {
 
     const {register, formState: {errors}, handleSubmit} = useForm();
     const sendForm = (formData, event) => { //Esta data es la que va a App, a la función addUser que le añade el id
@@ -43,4 +43,4 @@ const UserForm = (props) => {
     );
 };
 
-export default UserForm;
+export default AddUserForm;

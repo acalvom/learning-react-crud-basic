@@ -1,6 +1,6 @@
 import React from 'react';
 
-const UserTable = ({users, deleteUser}) => {
+const UserTable = ({users, deleteUser, editUser}) => {
     return (
         <table>
             <thead>
@@ -22,7 +22,10 @@ const UserTable = ({users, deleteUser}) => {
                             <td> {user.name}</td>
                             <td> {user.age}</td>
                             <td>
-                                <button className="button muted-button">Edit</button>
+                                <button className="button muted-button"
+                                        onClick={() => editUser(user)}>
+                                    Edit
+                                </button>
                                 {/*Cuidado!! Es importante pasar la función delete user como función de flecha porque si
                                 no, se ejecuta de inmediato y se borran todos los usuarios al inicio*/}
                                 <button className="button muted-button"
